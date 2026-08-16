@@ -15,10 +15,8 @@ export const siteConfig = {
   navAfter: "博客",
 
   // 2. 头像设置 (支持网络链接，或将图片放入 public 文件夹后使用 "/me.jpg")
-  avatarUrl: "https://github.com/kings-well-byte/images/blob/main/2eccd9731f2f24a697c4c7cc4b0399c1.jpg",
-// 网站图标（浏览器标签页显示）
-faviconUrl: "https://github.com/kings-well-byte/images/blob/main/2eccd9731f2f24a697c4c7cc4b0399c1.jpg",
-
+avatarUrl: "https://raw.githubusercontent.com/kings-well-byte/images/main/2eccd9731f2f24a697c4c7cc4b0399c1.jpg",
+faviconUrl: "https://raw.githubusercontent.com/kings-well-byte/images/main/2eccd9731f2f24a697c4c7cc4b0399c1.jpg",
   // 3. 网站背景设置 (二选一)
   // 如果想用纯图片背景，请在下面 bgImage 写路径，并将 useGradient 设为 false
   useGradient: false,
