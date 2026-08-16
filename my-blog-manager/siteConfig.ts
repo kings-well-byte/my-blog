@@ -2,20 +2,22 @@
 
 export const siteConfig = {
   // 1. 网站标题与博主信息
-  title: "XingHuiSama の 宝藏之地",
+  title: "-L.",
   faviconUrl: "https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
-  authorName: "XingHuiSama",
-  bio: "在代码、学术与分子动力学模拟间穿梭的普通人。近期正埋头于 GROMACS 模拟研究与神经网络计算。",
+  authorName: "-L.",
+  bio: "网络安全学习中，CTF备赛",
 
-  navTitle: "XingHuiSama",
+  navTitle: "-L.",
 
   // 👇 【新增】导航栏中间的那个后缀/分隔符（默认是 の）
   navSuffix: "の",
 
-  navAfter: "宝藏之地",
+  navAfter: "博客",
 
   // 2. 头像设置 (支持网络链接，或将图片放入 public 文件夹后使用 "/me.jpg")
-  avatarUrl: "https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
+  avatarUrl: "https://github.com/kings-well-byte/images/blob/main/2eccd9731f2f24a697c4c7cc4b0399c1.jpg",
+// 网站图标（浏览器标签页显示）
+faviconUrl: "https://github.com/kings-well-byte/images/blob/main/2eccd9731f2f24a697c4c7cc4b0399c1.jpg",
 
   // 3. 网站背景设置 (二选一)
   // 如果想用纯图片背景，请在下面 bgImage 写路径，并将 useGradient 设为 false
