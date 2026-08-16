@@ -29,11 +29,11 @@ faviconUrl: "https://raw.githubusercontent.com/kings-well-byte/images/main/2eccd
 
   // 5. 首页照片墙预览图
   photoWallImage: "https://bu.dusays.com/2026/03/24/69c1e38b4c370.jpg",
-  cloudMusicIds: ["1809646618", "3361076230", "1859390262"],
+  cloudMusicIds: ["27646205", "1895330088", "2110700883"],
   social: {
     github: "https://github.com/kings-well-byte",
     gitee: "",
-    google: "1573049538@gmail.com",
+    google: "mailto:1573049538@gmail.com",
     email: "1573049538@qq.com",
     qq: "1573049538",
     wechat: "怀桑",
