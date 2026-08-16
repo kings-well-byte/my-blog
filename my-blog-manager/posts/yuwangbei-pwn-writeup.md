@@ -3,7 +3,7 @@ title: "第十届御网杯 PWN 题解合集"
 date: "2026-05-30"
 description: "第十届御网杯 CTF 竞赛 PWN 方向三道题目的详细题解，涵盖栈溢出、ret2backdoor、shellcode 注入等经典利用手法。"
 tags: ["CTF", "PWN", "御网杯", "Writeup"]
-cover: "https://raw.githubusercontent.com/kings-well-byte/images/main/eb35bf8773ba9c7504099778b150e5df.jpg"
+cover: "https://raw.githubusercontent.com/kings-well-byte/images/main/16991c20653b480ecb4b10c5466d642608c0d15c.jpg"
 ---
 
 # 第十届御网杯 PWN 题解合集
@@ -27,11 +27,11 @@ cover: "https://raw.githubusercontent.com/kings-well-byte/images/main/eb35bf8773
 
 ## 题目信息
 
-| 项目 | 内容 |
-|------|------|
-| 题目类型 | PWN |
-| 难度 | Easy |
-| 考点 | 栈溢出、ret2backdoor、栈对齐 |
+| 项目   | 内容                   |
+| ---- | -------------------- |
+| 题目类型 | PWN                  |
+| 难度   | Easy                 |
+| 考点   | 栈溢出、ret2backdoor、栈对齐 |
 
 ## 题目分析
 
@@ -153,11 +153,11 @@ flag{eb894509110dfe178dfe94d828d9d15c}
 
 ## 题目信息
 
-| 项目 | 内容 |
-|------|------|
-| 题目类型 | PWN |
-| 难度 | Easy |
-| 考点 | 栈地址泄露、Shellcode 注入、栈可执行 |
+| 项目   | 内容                      |
+| ---- | ----------------------- |
+| 题目类型 | PWN                     |
+| 难度   | Easy                    |
+| 考点   | 栈地址泄露、Shellcode 注入、栈可执行 |
 
 ## 概述
 
@@ -170,6 +170,7 @@ flag{eb894509110dfe178dfe94d828d9d15c}
 程序为 64 位 ELF，无 PIE、无 Canary、栈可执行（GNU_STACK RWE）。
 
 `vuln()` 函数逻辑：
+
 1. 打印 `Buffer at: %p` 泄露栈上 buffer 地址
 2. 调用 `read(0, buf, 0x100)` — buffer 大小仅 0x80，溢出 0x80 字节
 
@@ -239,11 +240,11 @@ flag{5e76f1da370f72f3dbac204eade3f3b7}
 
 ## 题目信息
 
-| 项目 | 内容 |
-|------|------|
-| 题目类型 | PWN |
-| 难度 | Easy |
-| 考点 | 栈溢出、ret2text、栈对齐 |
+| 项目   | 内容               |
+| ---- | ---------------- |
+| 题目类型 | PWN              |
+| 难度   | Easy             |
+| 考点   | 栈溢出、ret2text、栈对齐 |
 
 ## Summary
 
@@ -312,10 +313,10 @@ flag{db35a83bde913ee94d6a7200849bb08a}
 
 ## 三题对比总结
 
-| 题目 | 溢出函数 | 利用方式 | 特殊条件 |
-|------|---------|---------|---------|
-| **Authenticate** | `gets()` | ret2backdoor | 需栈对齐 |
+| 题目               | 溢出函数     | 利用方式         | 特殊条件        |
+| ---------------- | -------- | ------------ | ----------- |
+| **Authenticate** | `gets()` | ret2backdoor | 需栈对齐        |
 | **MessageBoard** | `read()` | Shellcode 注入 | 栈可执行 + 地址泄露 |
-| **NoteService** | `read()` | ret2text | 需栈对齐 |
+| **NoteService**  | `read()` | ret2text     | 需栈对齐        |
 
 > **后记**：这三道题都是 PWN 方向的入门经典题，涵盖了栈溢出最基础的利用方式。熟练掌握这些基础后，可以进一步学习 ROP 链构造、格式化字符串、堆利用等进阶技术。
