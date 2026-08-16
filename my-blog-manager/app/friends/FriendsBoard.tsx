@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,7 +9,7 @@ import { useOperations } from '../../context/OperationContext';
 import { useToast } from '../../components/ToastProvider';
 import FloatingImageTool from '../../components/editor/FloatingImageTool';
 
-// 🌟 新增：引入配置和评论组件
+// 馃専 鏂板锛氬紩鍏ラ厤缃拰璇勮缁勪欢
 import Comments from '../../components/Comments';
 import { siteConfig } from '../../siteConfig';
 
@@ -33,7 +33,7 @@ export default function FriendsBoard() {
   const [friendModal, setFriendModal] = useState<{ isOpen: boolean; mode: 'add' | 'edit'; data: Partial<Friend> }>({ isOpen: false, mode: 'add', data: {} });
   const [isImgToolOpen, setIsImgToolOpen] = useState(false);
 
-  // 🌟 新增：控制复制按钮的状态和读取配置模板
+  // 馃専 鏂板锛氭帶鍒跺鍒舵寜閽殑鐘舵€佸拰璇诲彇閰嶇疆妯℃澘
   const [isCopied, setIsCopied] = useState(false);
   const applyFormat = siteConfig.friendLinkApplyFormat;
 
@@ -47,15 +47,15 @@ export default function FriendsBoard() {
     addOperation({
       id: `sync_friends_${Date.now()}`,
       type: "sync_friends",
-      label: "同步友链数据变更",
+      label: "鍚屾鍙嬮摼鏁版嵁鍙樻洿",
       value: nextList
     });
-    showToast("📍 变更已加入待处理队列，请在 Navbar 点击更新本地", "info");
+    showToast("馃搷 鍙樻洿宸插姞鍏ュ緟澶勭悊闃熷垪锛岃鍦?Navbar 鐐瑰嚮鏇存柊鏈湴", "info");
   };
 
   const handleSaveFriend = () => {
     const { mode, data } = friendModal;
-    if (!data.name || !data.url) { showToast("名称和 URL 不能为空哦", "warning"); return; }
+    if (!data.name || !data.url) { showToast("鍚嶇О鍜?URL 涓嶈兘涓虹┖鍝?, "warning"); return; }
 
     let next;
     if (mode === 'add') {
@@ -64,7 +64,7 @@ export default function FriendsBoard() {
         name: data.name!,
         url: data.url!,
         avatar: data.avatar || 'https://bu.dusays.com/2026/03/24/69c1e38b4c370.jpg',
-        description: data.description || '这位朋友很神秘，什么都没写。',
+        description: data.description || '杩欎綅鏈嬪弸寰堢绉橈紝浠€涔堥兘娌″啓銆?,
         themeColor: data.themeColor || '#6366f1'
       };
       next = [newFriend, ...editableFriends];
@@ -102,11 +102,11 @@ export default function FriendsBoard() {
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-slate-900/40 backdrop-blur-md" />
             <motion.div initial={{ scale: 0.9, opacity: 0, y: 20 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} className="relative w-full max-w-sm bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-[40px] shadow-2xl border border-white/50 p-10 text-center">
               <div className="w-16 h-16 bg-red-500/10 rounded-3xl flex items-center justify-center mx-auto mb-6"><AlertTriangle className="text-red-500" /></div>
-              <h3 className="text-xl font-black text-slate-900 dark:text-white mb-2">切断引力？</h3>
-              <p className="text-sm text-slate-500 mb-8">确认从列表中移除 <span className="font-bold text-red-500">"{deleteModal.name}"</span> 吗？</p>
+              <h3 className="text-xl font-black text-slate-900 dark:text-white mb-2">鍒囨柇寮曞姏锛?/h3>
+              <p className="text-sm text-slate-500 mb-8">纭浠庡垪琛ㄤ腑绉婚櫎 <span className="font-bold text-red-500">"{deleteModal.name}"</span> 鍚楋紵</p>
               <div className="flex gap-3">
-                <button onClick={() => setDeleteModal({ ...deleteModal, isOpen: false })} className="flex-1 py-4 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-2xl text-xs font-black hover:bg-slate-200 transition-colors">取消</button>
-                <button onClick={confirmDelete} className="flex-1 py-4 bg-red-500 text-white rounded-2xl text-xs font-black shadow-lg hover:bg-red-600 transition-colors">确认移除</button>
+                <button onClick={() => setDeleteModal({ ...deleteModal, isOpen: false })} className="flex-1 py-4 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-2xl text-xs font-black hover:bg-slate-200 transition-colors">鍙栨秷</button>
+                <button onClick={confirmDelete} className="flex-1 py-4 bg-red-500 text-white rounded-2xl text-xs font-black shadow-lg hover:bg-red-600 transition-colors">纭绉婚櫎</button>
               </div>
             </motion.div>
           </div>
@@ -118,26 +118,26 @@ export default function FriendsBoard() {
           <div className="fixed inset-0 z-[150] flex items-center justify-center p-4">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
             <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 50, opacity: 0 }} className="relative w-full max-w-md bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl rounded-[40px] border border-white/20 p-8 shadow-2xl overflow-hidden">
-               <h2 className="text-2xl font-black mb-6 dark:text-white flex items-center gap-2"><Sparkles className="text-indigo-500" /> {friendModal.mode === 'add' ? '建立新连接' : '修改朋友信息'}</h2>
+               <h2 className="text-2xl font-black mb-6 dark:text-white flex items-center gap-2"><Sparkles className="text-indigo-500" /> {friendModal.mode === 'add' ? '寤虹珛鏂拌繛鎺? : '淇敼鏈嬪弸淇℃伅'}</h2>
                <div className="space-y-4">
-                 <input type="text" value={friendModal.data.name || ''} onChange={e => setFriendModal({...friendModal, data: {...friendModal.data, name: e.target.value}})} className="w-full bg-slate-100 dark:bg-black/20 rounded-2xl px-5 py-3 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 border-none" placeholder="朋友的名字" />
-                 <input type="text" value={friendModal.data.url || ''} onChange={e => setFriendModal({...friendModal, data: {...friendModal.data, url: e.target.value}})} className="w-full bg-slate-100 dark:bg-black/20 rounded-2xl px-5 py-3 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 border-none" placeholder="博客网址 (https://...)" />
+                 <input type="text" value={friendModal.data.name || ''} onChange={e => setFriendModal({...friendModal, data: {...friendModal.data, name: e.target.value}})} className="w-full bg-slate-100 dark:bg-black/20 rounded-2xl px-5 py-3 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 border-none" placeholder="鏈嬪弸鐨勫悕瀛? />
+                 <input type="text" value={friendModal.data.url || ''} onChange={e => setFriendModal({...friendModal, data: {...friendModal.data, url: e.target.value}})} className="w-full bg-slate-100 dark:bg-black/20 rounded-2xl px-5 py-3 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 border-none" placeholder="鍗氬缃戝潃 (https://...)" />
 
                  <div className="relative group">
-                    <input type="text" value={friendModal.data.avatar || ''} onChange={e => setFriendModal({...friendModal, data: {...friendModal.data, avatar: e.target.value}})} className="w-full bg-slate-100 dark:bg-black/20 rounded-2xl px-5 py-3 pr-14 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 border-none" placeholder="头像 URL" />
+                    <input type="text" value={friendModal.data.avatar || ''} onChange={e => setFriendModal({...friendModal, data: {...friendModal.data, avatar: e.target.value}})} className="w-full bg-slate-100 dark:bg-black/20 rounded-2xl px-5 py-3 pr-14 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 border-none" placeholder="澶村儚 URL" />
                     <button onClick={() => setIsImgToolOpen(true)} className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-xl bg-indigo-500 text-white shadow-md hover:bg-indigo-600 transition-colors"><CloudUpload size={18} /></button>
                  </div>
 
-                 <textarea value={friendModal.data.description || ''} onChange={e => setFriendModal({...friendModal, data: {...friendModal.data, description: e.target.value}})} className="w-full bg-slate-100 dark:bg-black/20 rounded-2xl px-5 py-3 dark:text-white h-20 outline-none focus:ring-2 focus:ring-indigo-500 border-none resize-none" placeholder="简单描述一下..." />
+                 <textarea value={friendModal.data.description || ''} onChange={e => setFriendModal({...friendModal, data: {...friendModal.data, description: e.target.value}})} className="w-full bg-slate-100 dark:bg-black/20 rounded-2xl px-5 py-3 dark:text-white h-20 outline-none focus:ring-2 focus:ring-indigo-500 border-none resize-none" placeholder="绠€鍗曟弿杩颁竴涓?.." />
 
                  <div className="flex items-center gap-4 px-2">
-                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">主题色：</label>
+                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">涓婚鑹诧細</label>
                     <input type="color" value={friendModal.data.themeColor || '#6366f1'} onChange={e => setFriendModal({...friendModal, data: {...friendModal.data, themeColor: e.target.value}})} className="w-10 h-10 rounded-lg overflow-hidden border-none cursor-pointer" />
                  </div>
                </div>
                <div className="mt-8 flex gap-3">
-                 <button onClick={() => setFriendModal({ ...friendModal, isOpen: false })} className="flex-1 py-3 text-slate-500 font-bold hover:text-slate-800 dark:hover:text-white transition-colors">取消</button>
-                 <button onClick={handleSaveFriend} className="flex-1 py-4 bg-indigo-500 text-white rounded-2xl font-black shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 hover:bg-indigo-600 transition-colors"><Save size={18} /> 加入暂存</button>
+                 <button onClick={() => setFriendModal({ ...friendModal, isOpen: false })} className="flex-1 py-3 text-slate-500 font-bold hover:text-slate-800 dark:hover:text-white transition-colors">鍙栨秷</button>
+                 <button onClick={handleSaveFriend} className="flex-1 py-4 bg-indigo-500 text-white rounded-2xl font-black shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 hover:bg-indigo-600 transition-colors"><Save size={18} /> 鍔犲叆鏆傚瓨</button>
                </div>
             </motion.div>
           </div>
@@ -149,8 +149,8 @@ export default function FriendsBoard() {
           <BackButton />
         </div>
         <div className="text-center md:text-left w-full">
-          <h1 className="text-4xl font-black text-slate-900 dark:text-white mb-4 tracking-widest drop-shadow-sm uppercase">云端引力</h1>
-          <p className="text-slate-600 dark:text-slate-400 font-serif">那些散落在赛博宇宙各处的有趣灵魂与神经节点。</p>
+          <h1 className="text-4xl font-black text-slate-900 dark:text-white mb-4 tracking-widest drop-shadow-sm uppercase">浜戠寮曞姏</h1>
+          <p className="text-slate-600 dark:text-slate-400 font-serif">閭ｄ簺鏁ｈ惤鍦ㄨ禌鍗氬畤瀹欏悇澶勭殑鏈夎叮鐏甸瓊涓庣缁忚妭鐐广€?/p>
         </div>
       </div>
 
@@ -160,7 +160,7 @@ export default function FriendsBoard() {
             <div className="w-14 h-14 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-indigo-500 group-hover:text-white transition-all shadow-md group-hover:rotate-90">
               <Plus size={32} />
             </div>
-            <span className="mt-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-indigo-500">添加新朋友</span>
+            <span className="mt-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-indigo-500">娣诲姞鏂版湅鍙?/span>
         </motion.div>
 
         {editableFriends.map((friend) => (
@@ -191,7 +191,7 @@ export default function FriendsBoard() {
         ))}
       </motion.div>
 
-      {/* 🌟 新增：申请友链引导区 (与前端组件一致的移动端适配) */}
+      {/* 馃専 鏂板锛氱敵璇峰弸閾惧紩瀵煎尯 (涓庡墠绔粍浠朵竴鑷寸殑绉诲姩绔€傞厤) */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -200,10 +200,10 @@ export default function FriendsBoard() {
         className="mt-14 md:mt-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-2xl md:rounded-3xl p-5 md:p-8 max-w-3xl mx-auto text-center shadow-lg md:shadow-xl relative"
       >
         <h2 className="text-lg md:text-2xl font-black text-slate-900 dark:text-white mb-2 md:mb-4 tracking-wider">
-          ✨ 建立神经连接
+          鉁?寤虹珛绁炵粡杩炴帴
         </h2>
         <p className="text-xs md:text-base text-slate-600 dark:text-slate-400 font-serif mb-4 md:mb-6">
-          欢迎各位大佬交换友链！请一键复制下方格式，并在底部的 Gitalk 留言板申请：
+          娆㈣繋鍚勪綅澶т浆浜ゆ崲鍙嬮摼锛佽涓€閿鍒朵笅鏂规牸寮忥紝骞跺湪搴曢儴鐨?Gitalk 鐣欒█鏉跨敵璇凤細
         </p>
 
         <div className="relative bg-slate-100/60 dark:bg-slate-900/60 rounded-xl md:rounded-2xl p-4 md:p-5 text-left inline-block w-full max-w-md border border-slate-200/50 dark:border-slate-700/50 group overflow-hidden">
@@ -214,7 +214,7 @@ export default function FriendsBoard() {
           <button
             onClick={handleCopy}
             className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 md:p-2 rounded-lg bg-white/80 dark:bg-slate-800/80 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500 transition-all duration-300 shadow-sm backdrop-blur-sm"
-            title="一键复制"
+            title="涓€閿鍒?
           >
             {isCopied ? (
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5 md:w-4 md:h-4 text-green-500">
@@ -233,12 +233,12 @@ export default function FriendsBoard() {
             href="#gitalk-container"
             className="inline-block px-6 py-2.5 md:px-8 md:py-3 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white rounded-full text-sm md:text-base font-bold tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-indigo-500/30"
           >
-            前往留言区申请 👇
+            鍓嶅線鐣欒█鍖虹敵璇?馃憞
           </a>
         </div>
       </motion.div>
 
-      {/* 🌟 新增：Gitalk 评论区 */}
+      {/* 馃専 鏂板锛欸italk 璇勮鍖?*/}
       <motion.div
         id="gitalk-container"
         className="mt-12 md:mt-16 scroll-mt-24 px-2 md:px-0"
@@ -250,7 +250,7 @@ export default function FriendsBoard() {
         <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-6">
           <span className="w-8 md:w-12 h-[1px] bg-slate-300 dark:bg-slate-700"></span>
           <h3 className="text-sm md:text-xl font-bold text-slate-800 dark:text-gray-200 tracking-widest uppercase">
-            终端留言板
+            缁堢鐣欒█鏉?
           </h3>
           <span className="w-8 md:w-12 h-[1px] bg-slate-300 dark:bg-slate-700"></span>
         </div>
