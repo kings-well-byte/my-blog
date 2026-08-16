@@ -1,27 +1,32 @@
----
+﻿---
 title: 关于我
-date: '2026-03-31'
+date: "2026-08-16"
 tags: []
-mood: ''
-cover: https://bu.dusays.com/2026/03/24/69c23dc278c78.jpg
-description: ''
+mood: ""
+cover: https://raw.githubusercontent.com/kings-well-byte/images/main/2eccd9731f2f24a697c4c7cc4b0399c1.jpg
+description: ""
 ---
 
 个人简介
 
-你好，我是 XingHuiSama。
+你好，我是 -L.。
 
-专注于**计算化学、人工智能与软件工程**的交叉应用。
+专注于**网络安全、CTF 竞赛与渗透测试**的学习与实践。
 
-**🔬 研究与计算方向**
+**🔐 安全研究方向**
 
-* **图神经网络:** 用于分子性质预测与特征提取。
-* **分子对接:** 用于评估配体与受体蛋白的结合模式与亲和力。
-* **分子动力学模拟 :** 用于探究生物大分子在原子尺度的动态行为与构象变化。
+* **Web 渗透测试:** 熟悉 SQL 注入、XSS、文件上传等常见漏洞原理与利用
+* **二进制安全 (PWN):** 栈溢出、堆利用、ROP 链构造等
+* **逆向工程:** 使用 IDA Pro、Ghidra 进行静态分析与动态调试
 
-**💻 软件工程能力**
+**💻 技术能力**
 
-* **后端开发:** 使用 **Spring Boot** 框架构建服务端架构，能够处理复杂的数据逻辑与计算任务调度。
-* **前端开发:** 熟练掌握 **Vue.js** 与 **React** 框架，为复杂科学数据的可视化与交互提供流畅的体验。
+* **编程语言:** Python、C/C++、JavaScript
+* **安全工具:** Burp Suite、Nmap、Metasploit、pwntools
+* **CTF 方向:** PWN、Web、Reverse
 
-**欢迎各位朋友联系交流~**
+**🏆 竞赛经历**
+
+* 第十届御网杯 CTF 竞赛
+
+欢迎各位师傅联系交流~
