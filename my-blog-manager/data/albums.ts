@@ -6,7 +6,7 @@ export const albums: Album[] = [
   {
     "id": "terra-journey",
     "title": "清冷",
-    "description": "关于源石、孤星与前文明的视觉记录（测试用相册）",
+    "description": "",
     "cover": "https://bu.dusays.com/2026/03/24/69c24230de927.jpg",
     "date": "2026.01",
     "photos": [
@@ -23,7 +23,7 @@ export const albums: Album[] = [
   {
     "id": "history-tour",
     "title": "日常",
-    "description": "寻访千年前的长安与汴梁遗迹（测试用相册）",
+    "description": "",
     "cover": "https://bu.dusays.com/2026/03/24/69c24230a4efe.jpg",
     "date": "2025.10",
     "photos": [
