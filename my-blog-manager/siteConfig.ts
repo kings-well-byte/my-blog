@@ -29,7 +29,7 @@ faviconUrl: "https://raw.githubusercontent.com/kings-well-byte/images/main/2eccd
 
   // 5. 首页照片墙预览图
   photoWallImage: "https://bu.dusays.com/2026/03/24/69c1e38b4c370.jpg",
-  cloudMusicIds: ["27646205", "1895330088", "2110700883"],
+  cloudMusicIds:   cloudMusicIds: ["208902", "2148207298", "558071673", "1478419190", "2110700883", "1895330088", "1398283847"],
   social: {
     github: "https://github.com/kings-well-byte",
     gitee: "",
